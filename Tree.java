@@ -32,15 +32,13 @@ public class Tree {
     {
         this.value = value;
         children = new ArrayList<Tree>();
-
-        //TODO
+        
     }
 
     public int getValue()
     {
         return value;
 
-        //TODO
     }
 
     public ArrayList<Tree> getChildren()
@@ -51,8 +49,7 @@ public class Tree {
 
     public void add(Tree child)
     {
-        //TODO
-        children.add(child);
+    	children.add(child);
 
     }
 }
