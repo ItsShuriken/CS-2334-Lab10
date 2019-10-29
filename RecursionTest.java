@@ -9,7 +9,18 @@ public class RecursionTest {
 		Assert.assertEquals(expected, actual);
 	}
 	
-	//TODO: GENERATE AND COMPLETE TESTS FOR ALL METHODS IN THE RECURSION CLASS.
 
+
+	
+	public void testNNaryTreeSize() {
+		Recursion recursion = new Recursion();
+		int expected = recursion.nnaryTreeSize(3, 5);
+		int actual = 121;
+		Assert.assertEquals(expected, actual);
+
+	}
+	
+	
+	
 }
 

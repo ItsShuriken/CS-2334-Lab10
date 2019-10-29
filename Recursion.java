@@ -179,7 +179,7 @@ public class Recursion {
          * circle will be <length> / 2.
          */
         if (square == true)
-        	area = ((length * length) + circledSquared(!square, (length /2), (depth -1)));		  
+        	area += ((length * length) + circledSquared(!square, (length /2), (depth -1)));		  
                 
         
         
@@ -200,8 +200,10 @@ public class Recursion {
          *  => width = sqrt(2) * <length>
          */
         else if (square == false) {
-        	area = ((Math.PI * Math.pow((length / 2), 2)) + circledSquared(!square, (Math.sqrt(2) * length), depth - 1));
+        	double width = (Math.sqrt(2) * length);
+        	area += ((Math.PI * Math.pow(length, 2)) + circledSquared(!square, width, depth - 1));
         } 
+        return area;
     }
 }
 
