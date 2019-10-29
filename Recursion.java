@@ -42,9 +42,6 @@ public class Recursion {
          */
         return value = value * factorial(value - 1);
 
-
-        //TODO
-
     }
 
     /**
@@ -65,10 +62,11 @@ public class Recursion {
      */
     public int fibonacci(int n)
     {
-        //TODO
-       
-        
-
+        if (n <= 1) {
+        	return n;
+        } else {
+        	return fibonacci(n - 1) + fibonacci(n - 2); 
+        }
     }
     /**
      * In a binary tree, each node has two children. In a ternary tree, each node has 3 children.
@@ -96,13 +94,12 @@ public class Recursion {
         if (height == 1)
         {
             return 1;
-
-	  
         }
         
         //TODO:
         else
         {
+        	return (int) (Math.pow(branchingFactor, height - 1) + nnaryTreeSize(branchingFactor, height - 1));
         	
         }
       
@@ -118,8 +115,19 @@ public class Recursion {
      */
     public int treeSum(Tree tree)
     {
-        //TODO
+    	if (tree.getChildren().size() == 0) {
+    		return tree.getValue();
+    	}
     	
+    	ArrayList<Tree> treeList = tree.getChildren();
+    	int total = tree.getValue();
+		
+    	for (Tree t: treeList) {
+    		total += treeSum(t);
+    	}
+
+    	return total;
+
     }
 
     /**
@@ -161,23 +169,18 @@ public class Recursion {
         /*
          * Simply return the area on the base case:
          */
-        if (depth == 1)
-        {
+        if (depth == 1) {
             return area;
         }
-
         /*
          * If the current shape is a square, the next is an inscribed circle.
          * 
          * We have a square of width <length>. Thus, the radius of the inscribed
          * circle will be <length> / 2.
          */
-        
-        
-        
-        
-        //TODO: Complete the requirements from the block of comments above.
-        
+        if (square == true)
+        	area = ((length * length) + circledSquared(!square, (length /2), (depth -1)));		  
+                
         
         
         
@@ -196,13 +199,11 @@ public class Recursion {
          *  => width = 2 * x = 2 * y / sqrt(2) = sqrt(2) * y
          *  => width = sqrt(2) * <length>
          */
-        
-        
-        
-        //TODO: Complete the requirements from the block of comments above.
-        
-        
-        
+        else if (square == false) {
+        	area = ((Math.PI * Math.pow((length / 2), 2)) + circledSquared(!square, (Math.sqrt(2) * length), depth - 1));
+        } 
     }
-
 }
+
+
+
